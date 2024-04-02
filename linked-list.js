@@ -9,11 +9,10 @@ class LinkedList {
   constructor() {
     this.head = null;
     this.length = 0;
-    this.tail;
   }
 
   addToHead(val) {
-    const newNode = new LinkedListNode(val, null);
+    const newNode = new LinkedListNode(val);
     this.length++;
 
     newNode.next = this.head;
@@ -25,11 +24,12 @@ class LinkedList {
   }
 
   addToTail(val) {
-    const newNode = new LinkedListNode(val, null);
+    const newNode = new LinkedListNode(val);
     this.length++;
 
     if(!this.head) {
-      return this.head = newNode;
+      this.head = newNode;
+      return this;
     }
 
     let current = this.head;
